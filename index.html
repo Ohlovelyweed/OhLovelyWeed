@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Donaciones</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
@@ -13,8 +14,11 @@ body{
   color:white;
   background:url("https://i.imgur.com/5kajv5M.png") no-repeat center center fixed;
   background-size:cover;
+  display:flex;
+  justify-content:center;
 }
 
+/* CONTENEDOR PRINCIPAL */
 .wrapper{
   text-align:center;
   margin-top:60px;
@@ -29,13 +33,13 @@ body{
   border:3px solid #900;
   box-shadow:0 0 20px #900;
   margin-bottom:20px;
-  order:1; /* Arriba */
+  order:1;
 }
 
 /* CONTENEDOR GENERAL */
 .container{
   display:flex;
-  flex-direction: column; /* vertical por defecto */
+  flex-direction: column;
   align-items:center;
   gap:20px;
 }
@@ -49,7 +53,7 @@ body{
   max-width:420px;
   box-shadow:0 0 40px rgba(120,0,0,0.6);
   border:1px solid #300;
-  order:2; /* después de la foto */
+  order:2;
 }
 
 h1{
@@ -106,7 +110,7 @@ button:hover{
   to{transform:scale(1.2);}
 }
 
-/* VIDEO + TELEGRAM */
+/* VIDEO */
 .video{
   width:90%;
   max-width:420px;
@@ -117,17 +121,15 @@ button:hover{
   background:#000;
   padding-bottom:15px;
   margin-bottom:20px;
-  order:3; /* después de la tarjeta */
+  order:3;
 }
 
 .video video{
   width:100%;
   height:auto;
   display:block;
-  border-radius:10px;
 }
 
-/* BOTONES DE TELEGRAM DENTRO DEL VIDEO */
 .video .telegram-container{
   text-align:center;
   margin-top:10px;
@@ -151,45 +153,49 @@ button:hover{
 .video .telegram-container button:hover{
   background:#222;
   transform:scale(1.05);
-  box-shadow:0 0 15px #00bfff;
 }
 
-/* ================== MEDIA QUERIES PARA MÓVILES ================== */
-@media (max-width: 600px){
-  .profile{
-    width:180px;  /* 30% más grande que 140px */
-    height:180px;
-  }
+/* ================== MODO MÓVIL 400x500 ================== */
+@media (max-width:600px){
 
-  h1{
-    font-size:46px; /* 30% más grande que 36px */
-  }
-
-  button{
-    font-size:23px; /* 30% más grande que 18px */
-    padding:21px;
-  }
-
-  .card{
-    width:98%;
-    padding:39px 33px; /* 30% más grande */
-  }
-
-  .video{
-    width:98%;
-    padding-bottom:26px; /* un poco más de espacio para botones */
-  }
-
-  .video video{
-    height:auto;
-  }
-
-  .video .telegram-container button{
-    width:48%;
-    font-size:21px; /* 30% más grande */
-    padding:16px 8px;
-  }
+.wrapper{
+  width:400px;
+  max-width:100%;
+  height:900px;
+  margin-top:20px;
 }
+
+.profile{
+  width:160px;
+  height:160px;
+}
+
+.card{
+  width:95%;
+  padding:30px;
+}
+
+h1{
+  font-size:40px;
+}
+
+button{
+  font-size:20px;
+  padding:18px;
+}
+
+.video{
+  width:95%;
+}
+
+.video .telegram-container button{
+  width:48%;
+  font-size:18px;
+  padding:12px 6px;
+}
+
+}
+
 </style>
 
 <script>
@@ -200,67 +206,66 @@ function copiarBizum(){
 </script>
 
 </head>
+
 <body>
 
 <div class="candle" style="left:40px;">
-  <div class="flame"></div>
+<div class="flame"></div>
 </div>
 
 <div class="candle" style="right:40px;">
-  <div class="flame"></div>
+<div class="flame"></div>
 </div>
 
 <div class="wrapper">
 
-  <div class="container">
+<div class="container">
 
-    <!-- FOTO PERFIL ARRIBA -->
-    <img class="profile" src="https://i.imgur.com/CNYxHGb.jpg">
+<img class="profile" src="https://i.imgur.com/CNYxHGb.jpg">
 
-    <!-- CUADRO DONACIONES -->
-    <div class="card">
-      <h1>Apoya el proyecto</h1>
-      <p>Si deseas ayudar puedes hacer una donación.</p>
+<div class="card">
+<h1>Apoya el proyecto</h1>
+<p>Si deseas ayudar puedes hacer una donación.</p>
 
-      <button class="coffee"
-      onclick="window.location.href='https://buymeacoffee.com/ohlovelyweed'">
-      ☕ Donar en BuyMeACoffee
-      </button>
+<button class="coffee"
+onclick="window.location.href='https://buymeacoffee.com/ohlovelyweed'">
+☕ Donar en BuyMeACoffee
+</button>
 
-      <button class="revolut"
-      onclick="window.location.href='https://revolut.me/m_garciaruiza'">
-      💳 Donar con Revolut
-      </button>
+<button class="revolut"
+onclick="window.location.href='https://revolut.me/m_garciaruiza'">
+💳 Donar con Revolut
+</button>
 
-      <button class="bizum" onclick="copiarBizum()">
-      📱 Donar con Bizum
-      </button>
+<button class="bizum" onclick="copiarBizum()">
+📱 Donar con Bizum
+</button>
 
-      <p>Número Bizum: 622375679</p>
-    </div>
+<p>Número Bizum: 622375679</p>
+</div>
 
-    <!-- VIDEO CON BOTONES DE TELEGRAM -->
-    <div class="video">
-      <video width="420" height="240" controls autoplay loop muted>
-        <source src="Molchat-Doma.mp4" type="video/mp4">
-        Tu navegador no soporta este vídeo.
-      </video>
+<div class="video">
+<video controls autoplay loop muted>
+<source src="Molchat-Doma.mp4" type="video/mp4">
+Tu navegador no soporta este vídeo.
+</video>
 
-      <div class="telegram-container">
-        <button onclick="window.location.href='https://t.me/+f0KhOU-pvCs5MDU0'">
-          🌑 Mi Grupo Personal
-        </button>
-        <button onclick="window.location.href='https://t.me/+Fijcu8cyH9IwZThk'">
-          🌕 Grupo de Contenido
-        </button>
-      </div>
-    </div>
+<div class="telegram-container">
+<button onclick="window.location.href='https://t.me/+f0KhOU-pvCs5MDU0'">
+🌑 Mi Grupo Personal
+</button>
 
-  </div>
+<button onclick="window.location.href='https://t.me/+Fijcu8cyH9IwZThk'">
+🌕 Grupo de Contenido
+</button>
+</div>
+
+</div>
+</div>
+
 </div>
 
 <script>
-// Volumen inicial del video al 10%
 const video = document.querySelector('.video video');
 video.volume = 0.1;
 </script>
