@@ -153,26 +153,40 @@ button:hover{
   box-shadow:0 0 15px #00bfff;
 }
 
-/* MEDIA QUERIES PARA MÓVILES */
+/* ================== MEDIA QUERIES PARA MÓVILES ================== */
 @media (max-width: 600px){
   .profile{
-    width:100px;
-    height:100px;
+    width:140px;  /* más grande */
+    height:140px;
   }
 
   h1{
-    font-size:28px;
+    font-size:36px; /* más grande */
   }
 
   button{
-    font-size:15px;
-    padding:12px;
+    font-size:18px; /* más grande */
+    padding:16px;
+  }
+
+  .card{
+    width:95%;
+    padding:30px 25px; /* más grande y cómodo */
+  }
+
+  .video{
+    width:95%;
+    padding-bottom:20px;
+  }
+
+  .video video{
+    height:auto;
   }
 
   .video .telegram-container button{
     width:48%;
-    font-size:14px;
-    padding:10px 5px;
+    font-size:16px; /* más grande */
+    padding:12px 6px;
   }
 }
 </style>
@@ -197,7 +211,6 @@ function copiarBizum(){
 
 <div class="wrapper">
 
-  <!-- BOTONES DE DONACION AL FRENTE -->
   <div class="container">
 
     <!-- CUADRO DONACIONES -->
