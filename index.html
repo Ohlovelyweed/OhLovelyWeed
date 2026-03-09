@@ -29,6 +29,7 @@ body{
   border:3px solid #900;
   box-shadow:0 0 20px #900;
   margin-bottom:20px;
+  order:1; /* Arriba */
 }
 
 /* CONTENEDOR GENERAL */
@@ -48,7 +49,7 @@ body{
   max-width:420px;
   box-shadow:0 0 40px rgba(120,0,0,0.6);
   border:1px solid #300;
-  order:1; /* aparece primero */
+  order:2; /* después de la foto */
 }
 
 h1{
@@ -116,7 +117,7 @@ button:hover{
   background:#000;
   padding-bottom:15px;
   margin-bottom:20px;
-  order:2; /* después de la tarjeta */
+  order:3; /* después de la tarjeta */
 }
 
 .video video{
@@ -156,27 +157,27 @@ button:hover{
 /* ================== MEDIA QUERIES PARA MÓVILES ================== */
 @media (max-width: 600px){
   .profile{
-    width:140px;  /* más grande */
-    height:140px;
+    width:180px;  /* 30% más grande que 140px */
+    height:180px;
   }
 
   h1{
-    font-size:36px; /* más grande */
+    font-size:46px; /* 30% más grande que 36px */
   }
 
   button{
-    font-size:18px; /* más grande */
-    padding:16px;
+    font-size:23px; /* 30% más grande que 18px */
+    padding:21px;
   }
 
   .card{
-    width:95%;
-    padding:30px 25px; /* más grande y cómodo */
+    width:98%;
+    padding:39px 33px; /* 30% más grande */
   }
 
   .video{
-    width:95%;
-    padding-bottom:20px;
+    width:98%;
+    padding-bottom:26px; /* un poco más de espacio para botones */
   }
 
   .video video{
@@ -185,8 +186,8 @@ button:hover{
 
   .video .telegram-container button{
     width:48%;
-    font-size:16px; /* más grande */
-    padding:12px 6px;
+    font-size:21px; /* 30% más grande */
+    padding:16px 8px;
   }
 }
 </style>
@@ -213,6 +214,9 @@ function copiarBizum(){
 
   <div class="container">
 
+    <!-- FOTO PERFIL ARRIBA -->
+    <img class="profile" src="https://i.imgur.com/CNYxHGb.jpg">
+
     <!-- CUADRO DONACIONES -->
     <div class="card">
       <h1>Apoya el proyecto</h1>
@@ -224,7 +228,7 @@ function copiarBizum(){
       </button>
 
       <button class="revolut"
-      onclick="window.location.href='https://revolut.me/m_garciaruiz'">
+      onclick="window.location.href='https://revolut.me/m_garciaruiza'">
       💳 Donar con Revolut
       </button>
 
@@ -234,9 +238,6 @@ function copiarBizum(){
 
       <p>Número Bizum: 622375679</p>
     </div>
-
-    <!-- FOTO PERFIL -->
-    <img class="profile" src="https://i.imgur.com/CNYxHGb.jpg" style="order:3;">
 
     <!-- VIDEO CON BOTONES DE TELEGRAM -->
     <div class="video">
